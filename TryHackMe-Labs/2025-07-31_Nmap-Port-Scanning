@@ -1,0 +1,89 @@
+# Nmap Port Scanning – TryHackMe
+
+## 🔍 What I Learned
+
+### 🧩 1. What is Nmap?
+- A powerful tool for network reconnaissance
+- Used to find open ports and services on a host
+
+---
+
+### 🌐 2. TCP and UDP Ports
+- **TCP**: connection-based, reliable (used for HTTP, SSH)
+- **UDP**: faster, connectionless (used for DNS, video)
+- Ports represent services. Can be `open`, `closed`, or `filtered`.
+
+---
+
+### 🚩 3. TCP Flags
+| Flag | Meaning              |
+|------|----------------------|
+| URG  | Urgent data          |
+| ACK  | Acknowledges data    |
+| PSH  | Push immediately     |
+| RST  | Reset connection     |
+| SYN  | Start connection     |
+| FIN  | End connection       |
+
+---
+
+### 🔁 4. TCP Connect Scan (`-sT`)
+- Full 3-way handshake (SYN → SYN-ACK → ACK)
+- Unprivileged (no root required)
+- Easy to detect by firewalls/IDS
+
+---
+
+### ⚡ 5. TCP SYN Scan (`-sS`)
+- Stealth scan (SYN → SYN-ACK → RST)
+- Faster and quieter
+- Requires root privileges
+
+---
+
+### 📡 6. UDP Scan (`-sU`)
+- Used for services like DNS, DHCP
+- Unreliable responses: silence doesn’t mean closed
+- Can be filtered silently
+
+---
+
+### ⚙️ 7. Scope & Performance Optimization
+- `-p 1-1000` → scan specific ports
+- `-T4` → speed up scan
+- `-T1` → slower, stealthier
+- `-Pn` → skip host discovery
+- `-PR` → ARP scan on local subnet
+
+---
+
+### 📦 8. Nmap Port States
+| State             | Description                             |
+|------------------|-----------------------------------------|
+| Open             | Service is listening                    |
+| Closed           | Host reachable but nothing listening    |
+| Filtered         | No response (likely firewall)           |
+| Unfiltered       | Responds, but can’t confirm open/closed |
+| Open|Filtered     | Could be either                         |
+| Closed|Filtered   | Could be either                         |
+
+---
+
+### 🔐 Privileged vs Unprivileged Scans
+- **Privileged (root):** SYN, ARP, raw packet scans
+- **Unprivileged:** TCP Connect, slower, more detectable
+
+---
+
+## 🧠 Final Skills Gained
+✅ Understood how Nmap works  
+✅ Learned the difference between TCP/UDP  
+✅ Practiced stealth scanning and performance tuning  
+✅ Recognized port states and TCP flag usage  
+✅ Used real commands like `nmap -sS`, `-sU`, `-Pn`, `-T4`
+
+---
+
+**Room Completed:** Nmap Basic Port Scans  
+**Date:** 2025-07-31  
+**Streak:** 2 days ✅  
