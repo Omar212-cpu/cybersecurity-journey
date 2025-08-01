@@ -22,11 +22,7 @@
 
 ---
 
-### 📸 Screenshots
 
-![Service Detection](./service-detect.png)  
-![Traceroute Output](./traceroute.png)  
-![NSE Demo](./nse-demo.png)  
 
 ---
 
