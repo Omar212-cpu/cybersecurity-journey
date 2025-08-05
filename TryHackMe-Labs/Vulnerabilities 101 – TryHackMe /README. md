@@ -1,0 +1,9 @@
+# 2025-08-05_Vulnerabilities-101
+
+## Vulnerabilities 101 – TryHackMe
+
+In this TryHackMe room, I explored a range of foundational cybersecurity vulnerabilities. I examined operating system flaws, configuration errors, the risks of weak or default credentials, logical vulnerabilities within application workflows, and human-factor exploits such as social engineering attacks.
+
+I also learned to leverage major vulnerability databases. The National Vulnerability Database (NVD) provided structured information on known CVEs, while Exploit-DB offered practical proof-of-concept exploits.  
+
+Finally, I applied these concepts in a hands-on scenario with ACKme IT Services. This exercise cemented my ability to identify, analyze, and exploit real-world vulnerabilities, significantly enhancing my skills in vulnerability assessment and proactive threat research.
