@@ -1,0 +1,33 @@
+# TryHackMe Progress Log (Phase 1)
+
+A single, consolidated log of the rooms I completed and the skills I practiced.  
+Use the **Table of Contents** to jump to any day.
+
+---
+
+## Table of Contents
+- [2025-08-11 — Linux Privilege Escalation](#2025-08-11--linux-privilege-escalation)
+- [2025-08-07 — Metasploit Framework Series](#2025-08-07--metasploit-framework-series)
+- [2025-08-06 — Vulnerability Capstone (Fuel CMS 1.4.1 RCE)](#2025-08-06--vulnerability-capstone-fuel-cms-141-rce)
+- [2025-08-06 — Exploit Vulnerabilities](#2025-08-06--exploit-vulnerabilities)
+- [2025-08-05 — Vulnerabilities 101](#2025-08-05--vulnerabilities-101)
+- [2025-08-04 — Network Security Fundamentals](#2025-08-04--network-security-fundamentals)
+
+---
+
+## 2025-08-11 — Linux Privilege Escalation
+
+**Room:** Linux Privilege Escalation  
+**Focus:** Enumeration → Exploitation → Post-Exploitation
+
+**What I practiced**
+- Permissions, **SUID/SGID**, **sudo** rules, cron/systemd tasks, capabilities, PATH/writable files.
+- Mapping findings to **GTFOBins** for practical abuse.
+
+**Workflow**
+- Baseline: `whoami`, `id`, `uname -a`, distro/version checks  
+- Sudo rights: `sudo -l`  
+- SUID/SGID sweep:
+  ```bash
+  find / -type f -perm -4000 -ls 2>/dev/null   # SUID
+  find / -type f -perm -2000 -ls 2>/dev/null   # SGID
