@@ -1,0 +1,55 @@
+Session Management — Notes & Lab Outcomes
+
+Summary. Web apps track logged-in users with server sessions and client cookies (random session IDs). This note captures risks, lab tests, and quick remediations.
+
+Key Risks
+
+Session hijacking (stolen cookie → user impersonation)
+
+Session fixation / predictable or weak IDs
+
+Stale session reuse (logout doesn’t kill server state)
+
+Missing cookie controls: Secure, HttpOnly, weak SameSite
+
+No rotation after login / privilege change
+
+Lab Checks Performed
+
+Intercepted and edited cookies via Burp Suite / browser DevTools
+
+Replayed a captured/guessed session to validate impersonation
+
+Verified logout actually invalidates server-side session
+
+Confirmed HTTPS on auth flows and cookie transmission
+
+Inspected flags: Secure, HttpOnly, SameSite (Lax/Strict)
+
+Checked ID rotation after login and when privileges change
+
+Assessed idle and absolute timeouts
+
+Example header used for replay
+GET /account HTTP/1.1
+Host: target
+Cookie: PHPSESSID=abcdef123456
+
+Quick Remediation Guide
+
+Generate cryptographically strong, unguessable session IDs
+
+Set cookies Secure + HttpOnly + SameSite=Lax/Strict
+
+Always over HTTPS; deny mixed content
+
+Rotate session ID on login and privilege changes
+
+Invalidate server session on logout; clear cookie on client
+
+Enforce idle and absolute timeouts
+
+Block fixation: ignore session IDs from URL; create fresh session post-auth
+
+Tools: Burp Suite, Browser DevTools
+Repo: logs & screenshots live here → cybersecurity-journey/
