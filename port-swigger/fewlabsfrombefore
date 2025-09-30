@@ -1,0 +1,23 @@
+LAB 4 :
+       in the json body in the email update i must add the ""roleid":2" to become admin , i had to do it in the repeater and than add "," after the line so i can add the next line.
+ 
+LAB 5: 
+      i did a horizontal privilege escalation by changing the url from "my-account?id=weiner" to "id=catlos" and can change it too in the burp suite when refreshing the gmail update page.
+
+LAB 6 : 
+       i solved it by going to  a post in the website and than pressing on the profile carlos the creator of the website wich showed me the url of the id of his even tho the website made it that there is GUID and csrf  it was a horizontal privilege escalation .
+
+LAB 7:
+      i didn't knew where was the body , but it clear in the http history requests of the proxy of burp , when i changed the id to carlos they redirected me to login page with the api code in the body.
+
+LAB 8: 
+      i solved this lab by adding a x-original-url line to the whole code under the host line with burp suite , than with that reached the admin panel wich is deniyihng everyone than deleting the user carlos by adding the x-original-url again but adding in it the GET  request too before the full path.
+
+LAB 9:
+      i solved this lab of authentication vulnerability by brute forcing the password and guessing the username since they say in the error wich one is invalid ,  using burbsuite in the repeater i managed to brute force using the a llist.
+
+
+LAB 10:
+     i solved this lab wich have 2fa vulnerabilities , by putting the victim's pass and username than when they wait for my verification code i just  change the url to /my-account and they put me in the victims account.
+
+LAB 11: i solved this lab by first capturing my password reseting request with burp , and than copy it , loged out, than logged in as the username carlos and did forget password , but i immedieately just paste the request in the repeater , than paste the old request ive copied than i changed the toked with the current coockie of the current request and the password to a new password and thats it i relogged in and im in .
